@@ -1,0 +1,8 @@
+.DS_Store
+*/Release
+*.o
+build
+*.mode1v3
+*.pbxuser
+*.tm_build_errors
+*.perspectivev3
