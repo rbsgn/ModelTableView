@@ -20,6 +20,9 @@
 @property (nonatomic, assign) SEL selectionHandler;
 @property (nonatomic, assign) BOOL deselectAutomatically;
 
+/*
+ Building selector is like - (UITableViewCell*)createTableCellForCell:(YXCell*)cell withReusable:(UITableViewCell*)reusable;
+ */
 + (id)cellWithId:(NSString*)reuseIdentifier delegate:(id)delegate 
 buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler;
 

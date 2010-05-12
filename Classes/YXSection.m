@@ -32,15 +32,20 @@
 	return self;
 }
 
++ (id)sectionWithHeader:(NSString*)header footer:(NSString*)footer {
+	YXSection * section = [[YXSection alloc] initWithHeader:header footer:footer];
+	return [section autorelease];
+}
+
 - (NSArray*)cells {
 	return _cells;
 }
 
-- (void)addCell:(YXCell*)cell {
+- (void)addCell:(YXBasicCell*)cell {
 	[_cells addObject:cell];
 }
 
-- (void)removeCell:(YXCell*)cell {
+- (void)removeCell:(YXBasicCell*)cell {
 	[_cells removeObject:cell];
 }
 

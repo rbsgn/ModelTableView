@@ -25,7 +25,7 @@
 				   withObject:(id)object withKey:(NSString*)key {
 	YXKVOSwitchCell * cell = [[YXKVOSwitchCell alloc] initWithReuseIdentifier:reuseIdentifier];
 	cell.title = title;
-	cell.delegate = self;
+	cell.delegate = cell;
 	cell.initialValueGetter = @selector(initialValue:);
 	cell.changeHandler = @selector(cell:changedValue:);
 	

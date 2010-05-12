@@ -11,6 +11,7 @@
 
 @implementation YXDisclosureCell
 
+@synthesize valueTitle = _valueTitle;
 @synthesize title = _title;
 @synthesize delegate = _delegate;
 @synthesize selector = _selector;
@@ -21,6 +22,8 @@
 	
 	self.title = nil;
 	
+	self.valueTitle = nil;
+
 	[super dealloc];
 }
 
@@ -34,11 +37,16 @@
 }
 
 - (UITableViewCell*)tableViewCellWithReusableCell:(UITableViewCell*)reusableCell {
+	UITableViewCellStyle style = UITableViewCellStyleDefault;
+	if (self.valueTitle != nil) {
+		style = UITableViewCellStyleValue1;			
+	}
 	UITableViewCell * cell = reusableCell;
-	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.reuseIdentifier] autorelease];
+	if (cell == nil || (cell.detailTextLabel == nil && self.valueTitle != nil)) {		 
+		cell = [[[UITableViewCell alloc] initWithStyle:style reuseIdentifier:self.reuseIdentifier] autorelease];
 	}
 	cell.textLabel.text = self.title;
+	cell.detailTextLabel.text = self.valueTitle;
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	return cell;
 }

@@ -11,10 +11,12 @@
 
 @interface YXDisclosureCell : YXBasicCell {
 	NSString * _title;
+	NSString * _valueTitle;
 	id _delegate;
 	SEL _selector;
 }
 
+@property (nonatomic, copy) NSString *valueTitle;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, assign) id delegate;
 @property (nonatomic, assign) SEL selector;

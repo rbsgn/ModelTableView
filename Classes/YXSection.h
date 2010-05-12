@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class YXCell;
+@class YXBasicCell;
 
 @interface YXSection : NSObject {
 	NSString * _header;
@@ -21,7 +21,9 @@
 
 - (id)initWithHeader:(NSString*)header footer:(NSString*)footer;
 
-- (void)addCell:(YXCell*)cell;
-- (void)removeCell:(YXCell*)cell;
++ (id)sectionWithHeader:(NSString*)header footer:(NSString*)footer;
+
+- (void)addCell:(YXBasicCell*)cell;
+- (void)removeCell:(YXBasicCell*)cell;
 
 @end
