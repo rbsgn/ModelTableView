@@ -35,9 +35,9 @@
 	_sections = [sections retain];
 }
 
-- (YXCustomizableCell*)modelCellAtIndexPath:(NSIndexPath*)indexPath {
+- (YXAbstractCell *)modelCellAtIndexPath:(NSIndexPath *)indexPath {
 	YXSection * section = [_sections objectAtIndex:indexPath.section];
-	YXCustomizableCell * cell = [section.cells objectAtIndex:indexPath.row];
+	YXAbstractCell * cell = [section.cells objectAtIndex:indexPath.row];
 	return cell;
 }
 
@@ -61,17 +61,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	YXCustomizableCell * cell = [self modelCellAtIndexPath:indexPath];
+	YXAbstractCell * cell = [self modelCellAtIndexPath:indexPath];
 	UITableViewCell * reusableCell = [tableView dequeueReusableCellWithIdentifier:cell.reuseIdentifier];
 	UITableViewCell * newCell = [cell tableViewCellWithReusableCell:reusableCell];
+
 	if (reusableCell != nil && newCell != reusableCell) {
 		NSLog(@"WARNING: reusable cell for id %@ was ignored", cell.reuseIdentifier);
 	}
+	
 	return newCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	YXCustomizableCell * cell = [self modelCellAtIndexPath:indexPath];
+	YXAbstractCell * cell = [self modelCellAtIndexPath:indexPath];
 	[cell tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
@@ -81,7 +83,7 @@
 //}
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-	YXCustomizableCell * cell = [self modelCellAtIndexPath:indexPath];
+	YXAbstractCell * cell = [self modelCellAtIndexPath:indexPath];
 	[cell tableView:tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
 }
 
