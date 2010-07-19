@@ -43,10 +43,12 @@
 											   withDelegate:self 
 										 initialValueGetter:@selector(cell0InitialValue:) 
 											  changeHandler:@selector(cell0:changedValue:)]];
+	
 	[sectionA addCell:[YXDisclosureCell cellWithReuseIdentifier:@"cell1" 
-													  withTitle:@"Advanced" 
-												   withDelegate:self 
-													   selector:@selector(cell1Tapped:)]];
+														  title:@"Advanced" 
+														  value:nil
+														 target:self 
+														 action:@selector(cell1Tapped:)]];
 	
 	
 	YXSection * sectionB = [[YXSection alloc] initWithHeader:nil footer:@"Section B"];

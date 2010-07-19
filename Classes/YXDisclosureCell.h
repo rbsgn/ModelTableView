@@ -10,19 +10,26 @@
 #import "YXAbstractCell.h"
 
 @interface YXDisclosureCell : YXAbstractCell {
-	NSString * _title;
-	NSString * _valueTitle;
-	id _delegate;
-	SEL _selector;
+@private
+	NSString * title_;
+	NSString * value_;
+	id target_;
+	SEL action_;
 }
 
-@property (nonatomic, copy) NSString *valueTitle;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) id delegate;
-@property (nonatomic, assign) SEL selector;
+@property (nonatomic, copy, readonly) NSString * title;
+@property (nonatomic, copy, readonly) NSString * value;
+@property (nonatomic, assign, readonly) id target;
+@property (nonatomic, assign, readonly) SEL action;
 
-// selector is a method like - (void)disclosureTapped:(YXDisclosureCell*)cell;
-+ (id)cellWithReuseIdentifier:(NSString*)reuseIdentifier withTitle:(NSString*)title 
-				 withDelegate:(id)delegate selector:(SEL)selector;
+
+//
+// Target must implement following action selector
+//   - (void)disclosureTapped:(YXDisclosureCell *)cell;
+//
+
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title;
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title value:(NSString *)value;
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title value:(NSString *)value target:(id)delegate action:(SEL)selector;
 
 @end
