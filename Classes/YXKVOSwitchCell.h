@@ -10,14 +10,15 @@
 #import "YXSwitchCell.h"
 
 @interface YXKVOSwitchCell : YXSwitchCell {
-	NSObject * _object;
-	NSString * _key;
+@private
+	NSObject * object_;
+	NSString * key_;
 }
 
-@property (nonatomic, retain) NSObject *object;
-@property (nonatomic, copy) NSString *key;
+@property (nonatomic, readonly, retain) NSObject * object;
+@property (nonatomic, readonly, copy) NSString * key;
 
-+ (id)cellWithReuseIdentifier:(NSString*)reuseIdentifier withTitle:(NSString*)title 
-				   withObject:(id)object withKey:(NSString*)key;
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title 
+				   object:(id)object key:(NSString *)key;
 
 @end

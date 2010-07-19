@@ -8,26 +8,34 @@
 
 #import "YXKVOSwitchCell.h"
 
+@interface YXKVOSwitchCell ()
+
+@property (nonatomic, copy, readwrite) NSString * title;
+@property (nonatomic, assign, readwrite) id target;
+@property (nonatomic, assign, readwrite) SEL initialValueGetter;
+@property (nonatomic, assign, readwrite) SEL action;
+
+@property (nonatomic, readwrite, retain) NSObject * object;
+@property (nonatomic, readwrite, copy) NSString * key;
+
+@end
+
 
 @implementation YXKVOSwitchCell
 
-@synthesize object = _object;
-@synthesize key = _key;
 
-- (void)dealloc {
-	self.object = nil;
-	self.key = nil;
+#pragma mark -
+#pragma mark Object lifecycle
 
-	[super dealloc];
-}
 
-+ (id)cellWithReuseIdentifier:(NSString*)reuseIdentifier withTitle:(NSString*)title 
-				   withObject:(id)object withKey:(NSString*)key {
++ (id)cellWithReuseIdentifier:(NSString*)reuseIdentifier title:(NSString *)title 
+				   object:(id)object key:(NSString *)key {
 	YXKVOSwitchCell * cell = [[YXKVOSwitchCell alloc] initWithReuseIdentifier:reuseIdentifier];
+	
 	cell.title = title;
-	cell.delegate = cell;
+	cell.target = cell;
 	cell.initialValueGetter = @selector(initialValue:);
-	cell.changeHandler = @selector(cell:changedValue:);
+	cell.action = @selector(cell:changedValue:);
 	
 	cell.object = object;
 	cell.key = key;
@@ -35,12 +43,51 @@
 	return cell;
 }
 
-- (NSNumber*)initialValue:(YXKVOSwitchCell*)cell {
-	return [_object valueForKey:_key];
+- (NSNumber *)initialValue:(YXKVOSwitchCell *)cell {
+	return [self.object valueForKey:self.key];
 }
 
-- (void)cell:(YXKVOSwitchCell*)cell changedValue:(UISwitch*)switchControl {
-	[_object setValue:[switchControl valueForKey:@"on"] forKey:_key];
+- (void)cell:(YXKVOSwitchCell *)cell changedValue:(UISwitch *)switchControl {
+	[self.object setValue:[switchControl valueForKey:@"on"] forKey:self.key];
 }
+
+- (void)setTitle:(NSString *)newTitle {
+	if (newTitle != title_) {
+		[title_ release];
+		title_ = [newTitle copy];
+	}
+}
+
+- (void)setTarget:(id)newTarget {
+	target_ = newTarget;
+}
+
+- (void)setAction:(SEL)newAction {
+	action_ = newAction;
+}
+
+- (void)setInitialValueGetter:(SEL)newInitialValueGetter {
+	initialValueGetter_ = newInitialValueGetter;
+}
+
+#pragma mark -
+#pragma mark Memory management
+
+
+@synthesize object = object_;
+@synthesize key = key_;
+@dynamic title;
+@dynamic target;
+@dynamic initialValueGetter;
+@dynamic action;
+
+
+- (void)dealloc {
+	[object_ release];
+	[key_ release];
+	
+	[super dealloc];
+}
+
 
 @end
