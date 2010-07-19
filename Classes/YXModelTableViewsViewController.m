@@ -16,20 +16,20 @@
 
 
 /*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
+ // The designated initializer. Override to perform setup that is required before the view is loaded.
+ - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+ if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+ // Custom initialization
+ }
+ return self;
+ }
+ */
 
 /*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
+ // Implement loadView to create a view hierarchy programmatically, without using a nib.
+ - (void)loadView {
+ }
+ */
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -39,10 +39,10 @@
 	YXSection * sectionA = [[YXSection alloc] initWithHeader:@"Section A" footer:nil];
 	
 	[sectionA addCell:[YXSwitchCell cellWithReuseIdentifier:@"cell0" 
-												  title:@"BOOM!" 
-											   target:self 
+													  title:@"BOOM!" 
+													 target:self 
 										 initialValueGetter:@selector(cell0InitialValue:) 
-											  action:@selector(cell0:changedValue:)]];
+													 action:@selector(cell0:changedValue:)]];
 	
 	[sectionA addCell:[YXDisclosureCell cellWithReuseIdentifier:@"cell1" 
 														  title:@"Advanced" 
@@ -53,16 +53,16 @@
 	
 	YXSection * sectionB = [[YXSection alloc] initWithHeader:nil footer:@"Section B"];
 	[sectionB addCell:[YXSwitchCell cellWithReuseIdentifier:@"cell2" 
-												  title:@"BAH!1" 
-											   target:self 
+													  title:@"BAH!1" 
+													 target:self 
 										 initialValueGetter:@selector(cell2InitialValue:) 
-											  action:@selector(cell2:changedValue:)]];
+													 action:@selector(cell2:changedValue:)]];
 	
 	YXSection * sectionC = [[YXSection alloc] initWithHeader:@"Section C before" footer:@"Section C after"];
 	[sectionC addCell:[YXButtonCell cellWithReuseIdentifier:@"buttonCell" 
-												  title:@"Button"
-											   target:self 
-												   action:@selector(buttonCellTapped:)]];
+													  title:@"Button"
+													 target:self 
+													 action:@selector(buttonCellTapped:)]];
 	
 	[self setSections:[NSArray arrayWithObjects:sectionA, sectionB, sectionC, nil]];
 	
@@ -94,12 +94,12 @@
 }
 
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
