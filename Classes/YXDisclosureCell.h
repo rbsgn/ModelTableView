@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YXBasicCell.h"
+#import "YXAbstractCell.h"
 
-@interface YXDisclosureCell : YXBasicCell {
+@interface YXDisclosureCell : YXAbstractCell {
 	NSString * _title;
 	NSString * _valueTitle;
 	id _delegate;

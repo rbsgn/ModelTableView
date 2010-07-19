@@ -16,7 +16,7 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* YXModelTableViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* YXModelTableViewsViewController.m */; };
 		5CC827A2119979AD00EE72E3 /* YXSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827A1119979AD00EE72E3 /* YXSection.m */; };
-		5CC827A511997A1200EE72E3 /* YXBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827A411997A1200EE72E3 /* YXBasicCell.m */; };
+		5CC827A511997A1200EE72E3 /* YXAbstractCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827A411997A1200EE72E3 /* YXAbstractCell.m */; };
 		5CC827A81199870C00EE72E3 /* YXCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827A71199870C00EE72E3 /* YXCell.m */; };
 		5CC827AE11998C4400EE72E3 /* YXSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827AD11998C4400EE72E3 /* YXSwitchCell.m */; };
 		5CC827B111998C4F00EE72E3 /* YXButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827B011998C4F00EE72E3 /* YXButtonCell.m */; };
@@ -40,8 +40,8 @@
 		32CA4F630368D1EE00C91783 /* YXModelTableViews_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXModelTableViews_Prefix.pch; sourceTree = "<group>"; };
 		5CC827A0119979AD00EE72E3 /* YXSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXSection.h; sourceTree = "<group>"; };
 		5CC827A1119979AD00EE72E3 /* YXSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXSection.m; sourceTree = "<group>"; };
-		5CC827A311997A1200EE72E3 /* YXBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBasicCell.h; sourceTree = "<group>"; };
-		5CC827A411997A1200EE72E3 /* YXBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBasicCell.m; sourceTree = "<group>"; };
+		5CC827A311997A1200EE72E3 /* YXAbstractCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAbstractCell.h; sourceTree = "<group>"; };
+		5CC827A411997A1200EE72E3 /* YXAbstractCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAbstractCell.m; sourceTree = "<group>"; };
 		5CC827A61199870C00EE72E3 /* YXCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCell.h; sourceTree = "<group>"; };
 		5CC827A71199870C00EE72E3 /* YXCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCell.m; sourceTree = "<group>"; };
 		5CC827AC11998C4400EE72E3 /* YXSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXSwitchCell.h; sourceTree = "<group>"; };
@@ -139,8 +139,8 @@
 				5CC8289011999EA600EE72E3 /* YXModelTableViewController.m */,
 				5CC827A0119979AD00EE72E3 /* YXSection.h */,
 				5CC827A1119979AD00EE72E3 /* YXSection.m */,
-				5CC827A311997A1200EE72E3 /* YXBasicCell.h */,
-				5CC827A411997A1200EE72E3 /* YXBasicCell.m */,
+				5CC827A311997A1200EE72E3 /* YXAbstractCell.h */,
+				5CC827A411997A1200EE72E3 /* YXAbstractCell.m */,
 				5CC827A61199870C00EE72E3 /* YXCell.h */,
 				5CC827A71199870C00EE72E3 /* YXCell.m */,
 				5CC827AF11998C4F00EE72E3 /* YXButtonCell.h */,
@@ -213,7 +213,7 @@
 				1D3623260D0F684500981E51 /* YXModelTableViewsAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* YXModelTableViewsViewController.m in Sources */,
 				5CC827A2119979AD00EE72E3 /* YXSection.m in Sources */,
-				5CC827A511997A1200EE72E3 /* YXBasicCell.m in Sources */,
+				5CC827A511997A1200EE72E3 /* YXAbstractCell.m in Sources */,
 				5CC827A81199870C00EE72E3 /* YXCell.m in Sources */,
 				5CC827AE11998C4400EE72E3 /* YXSwitchCell.m in Sources */,
 				5CC827B111998C4F00EE72E3 /* YXButtonCell.m in Sources */,

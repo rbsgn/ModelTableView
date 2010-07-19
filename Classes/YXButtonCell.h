@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YXBasicCell.h"
+#import "YXAbstractCell.h"
 
-@interface YXButtonCell : YXBasicCell {
+@interface YXButtonCell : YXAbstractCell {
 	NSString * _title;
 	id _delegate;
 	SEL _selector;

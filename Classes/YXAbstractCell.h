@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface YXBasicCell : NSObject {
+@interface YXAbstractCell : NSObject {
 	NSString * _reuseIdentifier;
 }
 @property (nonatomic, copy) NSString *reuseIdentifier;

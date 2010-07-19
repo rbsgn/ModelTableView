@@ -39,11 +39,11 @@
 	return [[cells_ copy] autorelease];
 }
 
-- (void)addCell:(YXBasicCell *)cell {
+- (void)addCell:(YXAbstractCell *)cell {
 	[cells_ addObject:cell];
 }
 
-- (void)removeCell:(YXBasicCell *)cell {
+- (void)removeCell:(YXAbstractCell *)cell {
 	[cells_ removeObject:cell];
 }
 

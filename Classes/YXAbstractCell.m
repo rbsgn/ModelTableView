@@ -6,10 +6,10 @@
 //  Copyright 2010 Yandex. All rights reserved.
 //
 
-#import "YXBasicCell.h"
+#import "YXAbstractCell.h"
 
 
-@implementation YXBasicCell
+@implementation YXAbstractCell
 
 @synthesize reuseIdentifier = _reuseIdentifier;
 

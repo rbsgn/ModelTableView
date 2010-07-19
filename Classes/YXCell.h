@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YXBasicCell.h"
+#import "YXAbstractCell.h"
 
-@interface YXCell : YXBasicCell {
+@interface YXCell : YXAbstractCell {
 	id _delegate;
 	SEL _buildingSelector;
 	SEL _selectionHandler;
