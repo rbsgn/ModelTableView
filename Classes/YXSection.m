@@ -11,42 +11,58 @@
 
 @implementation YXSection
 
-@synthesize header = _header;
-@synthesize footer = _footer;
-@dynamic cells;
 
-- (void)dealloc {
-	[_cells release], _cells = nil;
-	self.header = nil;
-	self.footer = nil;
+#pragma mark -
+#pragma mark Objec lifecycle
 
-	[super dealloc];
-}
 
-- (id)initWithHeader:(NSString*)header footer:(NSString*)footer {
-	if (self = [super init]) {
-		_cells = [[NSMutableArray alloc] initWithCapacity:10];
-		self.header = header;
-		self.footer = footer;
+- (id)initWithHeader:(NSString *)header footer:(NSString *)footer {
+	self = [super init];
+	if (self) {
+		cells_ = [[NSMutableArray alloc] init];
+		header_ = [header copy];
+		footer_ = [footer copy];
 	}
 	return self;
 }
 
-+ (id)sectionWithHeader:(NSString*)header footer:(NSString*)footer {
-	YXSection * section = [[YXSection alloc] initWithHeader:header footer:footer];
-	return [section autorelease];
++ (id)sectionWithHeader:(NSString *)header footer:(NSString *)footer {
+	return [[[[self class] alloc] initWithHeader:header footer:footer] autorelease];
 }
 
-- (NSArray*)cells {
-	return _cells;
+
+#pragma mark -
+#pragma mark Public interface
+
+
+- (NSArray *)cells {
+	return [[cells_ copy] autorelease];
 }
 
-- (void)addCell:(YXBasicCell*)cell {
-	[_cells addObject:cell];
+- (void)addCell:(YXBasicCell *)cell {
+	[cells_ addObject:cell];
 }
 
-- (void)removeCell:(YXBasicCell*)cell {
-	[_cells removeObject:cell];
+- (void)removeCell:(YXBasicCell *)cell {
+	[cells_ removeObject:cell];
 }
+
+
+#pragma mark -
+#pragma mark Memory management
+
+
+@synthesize header = headerTitle_;
+@synthesize footer = footerTitle_;
+
+
+- (void)dealloc {
+	[cells_ release];
+	[header_ release];
+	[footer_ release];
+	
+	[super dealloc];
+}
+
 
 @end
