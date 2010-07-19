@@ -8,34 +8,46 @@
 
 #import "YXSwitchCell.h"
 
+@interface YXSwitchCell ()
+
+@property (nonatomic, copy, readwrite) NSString * title;
+@property (nonatomic, assign, readwrite) id target;
+@property (nonatomic, assign, readwrite) SEL initialValueGetter;
+@property (nonatomic, assign, readwrite) SEL action;
+
+@end
+
 
 @implementation YXSwitchCell
 
-@synthesize title = _title;
-@synthesize delegate = _delegate;
-@synthesize initialValueGetter = _initialValueGetter;
-@synthesize changeHandler = _changeHandler;
 
-- (void)dealloc {
-	self.title = nil;
-	
-	[super dealloc];
-}
+#pragma mark -
+#pragma mark Object lifecycle
 
-+ (id)cellWithReuseIdentifier:(NSString*)reuseIdentifier withTitle:(NSString*)title 
-				 withDelegate:(id)delegate initialValueGetter:(SEL)initialValueGetter 
-				changeHandler:(SEL)changeHandler {
+
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title 
+					   target:(id)target initialValueGetter:(SEL)initialValueGetter 
+					   action:(SEL)action
+{
 	YXSwitchCell * cell = [[YXSwitchCell alloc] initWithReuseIdentifier:reuseIdentifier];
-	cell.delegate = delegate;
+	
+	cell.target = target;
 	cell.title = title;
 	cell.initialValueGetter = initialValueGetter;
-	cell.changeHandler = changeHandler;
+	cell.action = action;
+	
 	return cell;
 }
 
-- (UITableViewCell*)tableViewCellWithReusableCell:(UITableViewCell*)reusableCell {
+
+#pragma mark -
+#pragma mark Public interface
+
+
+- (UITableViewCell *)tableViewCellWithReusableCell:(UITableViewCell *)reusableCell {
 	UITableViewCell * cell = reusableCell;
 	UISwitch *switchControl = nil;
+	
 	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.reuseIdentifier] autorelease];
 		switchControl = [[UISwitch alloc] initWithFrame:CGRectZero];
@@ -45,17 +57,16 @@
 		switchControl = (UISwitch *)[cell accessoryView];
 	}
 	
-	[switchControl removeTarget:self action:NULL forControlEvents:UIControlEventAllEvents];
+	[switchControl removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
 
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	cell.textLabel.text = self.title;
 	
-	if (_delegate != nil && _initialValueGetter != NULL) { 
-		switchControl.on = [[_delegate performSelector:_initialValueGetter withObject:self] boolValue];
+	if (self.target != nil && self.initialValueGetter != NULL) { 
+		switchControl.on = [[self.target performSelector:self.initialValueGetter withObject:self] boolValue];
 	}
 	
-	[switchControl addTarget:self 
-					  action:@selector(switchControlChanged:) 
+	[switchControl addTarget:self action:@selector(switchControlChanged:) 
 			forControlEvents:UIControlEventValueChanged];
 	
 	return cell;
@@ -65,10 +76,30 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void)switchControlChanged:(UISwitch*)switchControl {
-	if (_delegate != nil && _changeHandler != NULL) {
-		[_delegate performSelector:_changeHandler withObject:self withObject:switchControl];
+- (void)switchControlChanged:(UISwitch *)switchControl {
+	if (self.target != nil && self.action != NULL) {
+		[self.target performSelector:self.action withObject:self withObject:switchControl];
 	}
+}
+
+
+#pragma mark -
+#pragma mark Memory management
+
+
+@synthesize title = title_;
+@synthesize target = target_;
+@synthesize initialValueGetter = initialValueGetter_;
+@synthesize action = action_;
+
+
+- (void)dealloc {
+	[title_ release];
+	target_ = nil;
+	action_ = NULL;
+	initialValueGetter_ = NULL;
+	
+	[super dealloc];
 }
 
 @end

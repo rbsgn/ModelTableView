@@ -10,22 +10,23 @@
 #import "YXAbstractCell.h"
 
 @interface YXSwitchCell : YXAbstractCell {
-	NSString * _title;
-	id _delegate;
-	SEL _initialValueGetter;
-	SEL _changeHandler;
+@protected
+	NSString * title_;
+	id target_;
+	SEL initialValueGetter_;
+	SEL action_;
 }
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) id delegate;
-@property (nonatomic, assign) SEL initialValueGetter;
-@property (nonatomic, assign) SEL changeHandler;
+
+@property (nonatomic, copy, readonly) NSString * title;
+@property (nonatomic, assign, readonly) id target;
+@property (nonatomic, assign, readonly) SEL initialValueGetter;
+@property (nonatomic, assign, readonly) SEL action;
 
 /* 
  Initial value getter is a method like: - (NSNumber*)valueForCell:(YXSwitchCell*)cell;
  Change handler has a form of: - (void)switchCell:(YXSwitchCell*)cell switchValueDidChange:(UISwitch*)switch;
  */
-+ (id)cellWithReuseIdentifier:(NSString*)reuseIdentifier withTitle:(NSString*)title 
-				 withDelegate:(id)delegate initialValueGetter:(SEL)initialValueGetter 
-				changeHandler:(SEL)changeHandler;
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title 
+				 target:(id)target initialValueGetter:(SEL)initialValueGetter action:(SEL)action;
 
 @end
