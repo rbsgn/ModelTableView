@@ -1,5 +1,5 @@
 //
-//  YXCell.h
+//  YXCustomizableCell.h
 //  YXModelTableViews
 //
 //  Created by Mikhail Kalugin on 5/11/10.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "YXAbstractCell.h"
 
-@interface YXCell : YXAbstractCell {
+@interface YXCustomizableCell : YXAbstractCell {
 	id _delegate;
 	SEL _buildingSelector;
 	SEL _selectionHandler;

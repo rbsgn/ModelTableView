@@ -35,9 +35,9 @@
 	_sections = [sections retain];
 }
 
-- (YXCell*)modelCellAtIndexPath:(NSIndexPath*)indexPath {
+- (YXCustomizableCell*)modelCellAtIndexPath:(NSIndexPath*)indexPath {
 	YXSection * section = [_sections objectAtIndex:indexPath.section];
-	YXCell * cell = [section.cells objectAtIndex:indexPath.row];
+	YXCustomizableCell * cell = [section.cells objectAtIndex:indexPath.row];
 	return cell;
 }
 
@@ -61,7 +61,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	YXCell * cell = [self modelCellAtIndexPath:indexPath];
+	YXCustomizableCell * cell = [self modelCellAtIndexPath:indexPath];
 	UITableViewCell * reusableCell = [tableView dequeueReusableCellWithIdentifier:cell.reuseIdentifier];
 	UITableViewCell * newCell = [cell tableViewCellWithReusableCell:reusableCell];
 	if (reusableCell != nil && newCell != reusableCell) {
@@ -71,7 +71,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	YXCell * cell = [self modelCellAtIndexPath:indexPath];
+	YXCustomizableCell * cell = [self modelCellAtIndexPath:indexPath];
 	[cell tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
@@ -81,7 +81,7 @@
 //}
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-	YXCell * cell = [self modelCellAtIndexPath:indexPath];
+	YXCustomizableCell * cell = [self modelCellAtIndexPath:indexPath];
 	[cell tableView:tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
 }
 

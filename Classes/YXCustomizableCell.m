@@ -6,10 +6,10 @@
 //  Copyright 2010 Yandex. All rights reserved.
 //
 
-#import "YXCell.h"
+#import "YXCustomizableCell.h"
 
 
-@implementation YXCell
+@implementation YXCustomizableCell
 
 @synthesize deselectAutomatically = _deselectAutomatically;
 @synthesize delegate = _delegate;
@@ -25,7 +25,7 @@
 
 + (id)cellWithId:(NSString*)reuseIdentifier delegate:(id)delegate 
 buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler {
-	YXCell * cell = [[YXCell alloc] initWithReuseIdentifier:reuseIdentifier];
+	YXCustomizableCell * cell = [[YXCustomizableCell alloc] initWithReuseIdentifier:reuseIdentifier];
 	cell.delegate = delegate;
 	cell.buildingSelector = buildingSelector;
 	cell.selectionHandler = selectionHandler;

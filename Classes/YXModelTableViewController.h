@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YXCell.h"
+#import "YXCustomizableCell.h"
 #import "YXSection.h"
 
 @interface YXModelTableViewController : UITableViewController {

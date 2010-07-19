@@ -17,7 +17,7 @@
 		28D7ACF80DDB3853001CB0EB /* YXModelTableViewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* YXModelTableViewsViewController.m */; };
 		5CC827A2119979AD00EE72E3 /* YXSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827A1119979AD00EE72E3 /* YXSection.m */; };
 		5CC827A511997A1200EE72E3 /* YXAbstractCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827A411997A1200EE72E3 /* YXAbstractCell.m */; };
-		5CC827A81199870C00EE72E3 /* YXCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827A71199870C00EE72E3 /* YXCell.m */; };
+		5CC827A81199870C00EE72E3 /* YXCustomizableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827A71199870C00EE72E3 /* YXCustomizableCell.m */; };
 		5CC827AE11998C4400EE72E3 /* YXSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827AD11998C4400EE72E3 /* YXSwitchCell.m */; };
 		5CC827B111998C4F00EE72E3 /* YXButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827B011998C4F00EE72E3 /* YXButtonCell.m */; };
 		5CC827B411998C7000EE72E3 /* YXDisclosureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827B311998C7000EE72E3 /* YXDisclosureCell.m */; };
@@ -42,8 +42,8 @@
 		5CC827A1119979AD00EE72E3 /* YXSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXSection.m; sourceTree = "<group>"; };
 		5CC827A311997A1200EE72E3 /* YXAbstractCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAbstractCell.h; sourceTree = "<group>"; };
 		5CC827A411997A1200EE72E3 /* YXAbstractCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAbstractCell.m; sourceTree = "<group>"; };
-		5CC827A61199870C00EE72E3 /* YXCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCell.h; sourceTree = "<group>"; };
-		5CC827A71199870C00EE72E3 /* YXCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCell.m; sourceTree = "<group>"; };
+		5CC827A61199870C00EE72E3 /* YXCustomizableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCustomizableCell.h; sourceTree = "<group>"; };
+		5CC827A71199870C00EE72E3 /* YXCustomizableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCustomizableCell.m; sourceTree = "<group>"; };
 		5CC827AC11998C4400EE72E3 /* YXSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXSwitchCell.h; sourceTree = "<group>"; };
 		5CC827AD11998C4400EE72E3 /* YXSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXSwitchCell.m; sourceTree = "<group>"; };
 		5CC827AF11998C4F00EE72E3 /* YXButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXButtonCell.h; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 				5CC827A1119979AD00EE72E3 /* YXSection.m */,
 				5CC827A311997A1200EE72E3 /* YXAbstractCell.h */,
 				5CC827A411997A1200EE72E3 /* YXAbstractCell.m */,
-				5CC827A61199870C00EE72E3 /* YXCell.h */,
-				5CC827A71199870C00EE72E3 /* YXCell.m */,
+				5CC827A61199870C00EE72E3 /* YXCustomizableCell.h */,
+				5CC827A71199870C00EE72E3 /* YXCustomizableCell.m */,
 				5CC827AF11998C4F00EE72E3 /* YXButtonCell.h */,
 				5CC827B011998C4F00EE72E3 /* YXButtonCell.m */,
 				5CC827B211998C7000EE72E3 /* YXDisclosureCell.h */,
@@ -214,7 +214,7 @@
 				28D7ACF80DDB3853001CB0EB /* YXModelTableViewsViewController.m in Sources */,
 				5CC827A2119979AD00EE72E3 /* YXSection.m in Sources */,
 				5CC827A511997A1200EE72E3 /* YXAbstractCell.m in Sources */,
-				5CC827A81199870C00EE72E3 /* YXCell.m in Sources */,
+				5CC827A81199870C00EE72E3 /* YXCustomizableCell.m in Sources */,
 				5CC827AE11998C4400EE72E3 /* YXSwitchCell.m in Sources */,
 				5CC827B111998C4F00EE72E3 /* YXButtonCell.m in Sources */,
 				5CC827B411998C7000EE72E3 /* YXDisclosureCell.m in Sources */,
