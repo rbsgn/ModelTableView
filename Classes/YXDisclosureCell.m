@@ -20,6 +20,11 @@
 
 @implementation YXDisclosureCell
 
+
+#pragma mark -
+#pragma mark Object lifecycle
+
+
 + (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title {
 	return [[self class] cellWithReuseIdentifier:reuseIdentifier title:title value:nil target:nil action:NULL];
 }
@@ -39,6 +44,11 @@
 	
 	return cell;
 }
+
+
+#pragma mark -
+#pragma mark Public interface
+
 
 - (UITableViewCell *)tableViewCellWithReusableCell:(UITableViewCell *)reusableCell {
 	UITableViewCellStyle style = UITableViewCellStyleDefault;

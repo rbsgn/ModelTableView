@@ -20,6 +20,10 @@
 @implementation YXButtonCell
 
 
+#pragma mark -
+#pragma mark Object lifecycle
+
+
 + (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title 
 					   target:(id)target action:(SEL)action
 {
@@ -31,6 +35,11 @@
 	
 	return cell;
 }
+
+
+#pragma mark -
+#pragma mark Public interface
+
 
 - (UITableViewCell*)tableViewCellWithReusableCell:(UITableViewCell *)reusableCell {
 	UITableViewCell * cell = reusableCell;
