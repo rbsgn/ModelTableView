@@ -1,5 +1,5 @@
 //
-//  YXCell.h
+//  YXAbstractCell.h
 //  YXModelTableViews
 //
 //  Created by Mikhail Kalugin on 5/11/10.
@@ -10,13 +10,15 @@
 
 
 @interface YXAbstractCell : NSObject {
-	NSString * _reuseIdentifier;
+@protected
+	NSString * reuseIdentifier_;
 }
-@property (nonatomic, copy) NSString *reuseIdentifier;
 
-- (id)initWithReuseIdentifier:(NSString*)reuseIdentifier;
+@property (nonatomic, readonly) NSString * reuseIdentifier;
 
-- (UITableViewCell*)tableViewCellWithReusableCell:(UITableViewCell*)reusableCell;
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+
+- (UITableViewCell *)tableViewCellWithReusableCell:(UITableViewCell *)reusableCell;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath;

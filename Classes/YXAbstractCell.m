@@ -1,5 +1,5 @@
 //
-//  YXCell.m
+//  YXAbstractCell.m
 //  YXModelTableViews
 //
 //  Created by Mikhail Kalugin on 5/11/10.
@@ -11,22 +11,25 @@
 
 @implementation YXAbstractCell
 
-@synthesize reuseIdentifier = _reuseIdentifier;
 
-- (void)dealloc {
-	self.reuseIdentifier = nil;
+#pragma mark -
+#pragma mark Object lifecycle 
 
-	[super dealloc];
-}
 
-- (id)initWithReuseIdentifier:(NSString*)reuseIdentifier {
-	if (self = [super init]) {
-		self.reuseIdentifier = reuseIdentifier;
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+	self = [super init];
+	if (self) {
+		reuseIdentifier_ = [reuseIdentifier copy];
 	}
 	return self;
 }
 
-- (UITableViewCell*)tableViewCellWithReusableCell:(UITableViewCell*)reusableCell  {
+
+#pragma mark -
+#pragma mark Public interface
+
+
+- (UITableViewCell *)tableViewCellWithReusableCell:(UITableViewCell *)reusableCell  {
 	@throw @"abstract method";
 }
 
@@ -37,6 +40,20 @@
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+}
+
+
+#pragma mark -
+#pragma mark Memory management
+
+
+@synthesize reuseIdentifier = reuseIdentifier_;
+
+
+- (void)dealloc {
+	[reuseIdentifier_ release];
+	
+	[super dealloc];
 }
 
 @end
