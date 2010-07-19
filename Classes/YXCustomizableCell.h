@@ -30,6 +30,6 @@
 //
 // Selection selector signature:
 // 
-+ (id)cellWithID:(NSString *)reuseIdentifier target:(id)target buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler;
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier target:(id)target buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler;
 
 @end

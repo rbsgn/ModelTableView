@@ -25,7 +25,7 @@
 #pragma mark Object lifecycle
 
 
-+ (id)cellWithID:(NSString *)reuseIdentifier target:(id)target buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler {
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier target:(id)target buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler {
 	YXCustomizableCell * cell = [[YXCustomizableCell alloc] initWithReuseIdentifier:reuseIdentifier];
 	cell.target = target;
 	cell.buildingSelector = buildingSelector;
