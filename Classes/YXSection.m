@@ -52,8 +52,8 @@
 #pragma mark Memory management
 
 
-@synthesize header = headerTitle_;
-@synthesize footer = footerTitle_;
+@synthesize header = header_;
+@synthesize footer = footer_;
 
 
 - (void)dealloc {
