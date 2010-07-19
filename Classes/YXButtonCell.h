@@ -10,17 +10,21 @@
 #import "YXAbstractCell.h"
 
 @interface YXButtonCell : YXAbstractCell {
-	NSString * _title;
-	id _delegate;
-	SEL _selector;
+@private
+	NSString * title_;
+	id target_;
+	SEL action_;
 }
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) id delegate;
-@property (nonatomic, assign) SEL selector;
+@property (nonatomic, copy, readonly) NSString * title;
+@property (nonatomic, assign, readonly) id target;
+@property (nonatomic, assign, readonly) SEL action;
 
-// selector is a method like - (void)buttonTapped:(YXButtonCell*)cell;
-+ (id)cellWithReuseIdentifier:(NSString*)reuseIdentifier withTitle:(NSString*)title 
-				 withDelegate:(id)delegate selector:(SEL)selector;
+//
+// Target must implement following action selector
+//   - (void)buttonTapped:(YXButtonCell*)cell;
+//
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title 
+					   target:(id)delegate action:(SEL)selector;
 
 @end

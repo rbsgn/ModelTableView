@@ -58,9 +58,9 @@
 	
 	YXSection * sectionC = [[YXSection alloc] initWithHeader:@"Section C before" footer:@"Section C after"];
 	[sectionC addCell:[YXButtonCell cellWithReuseIdentifier:@"buttonCell" 
-												  withTitle:@"Button"
-											   withDelegate:self 
-												   selector:@selector(buttonCellTapped:)]];
+												  title:@"Button"
+											   target:self 
+												   action:@selector(buttonCellTapped:)]];
 	
 	[self setSections:[NSArray arrayWithObjects:sectionA, sectionB, sectionC, nil]];
 	
