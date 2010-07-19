@@ -8,46 +8,70 @@
 
 #import "YXCustomizableCell.h"
 
+@interface YXCustomizableCell ()
+
+@property (nonatomic, assign, readwrite) id target;
+@property (nonatomic, assign, readwrite) SEL buildingSelector;
+@property (nonatomic, assign, readwrite) SEL selectionHandler;
+@property (nonatomic, assign, readwrite) BOOL deselectsAutomatically;
+
+@end
+
 
 @implementation YXCustomizableCell
 
-@synthesize deselectAutomatically = _deselectAutomatically;
-@synthesize delegate = _delegate;
-@synthesize buildingSelector = _buildingSelector;
-@synthesize selectionHandler = _selectionHandler;
 
-- (void)dealloc {
-	self.delegate = nil;
+#pragma mark -
+#pragma mark Object lifecycle
 
 
-	[super dealloc];
-}
-
-+ (id)cellWithId:(NSString*)reuseIdentifier delegate:(id)delegate 
-buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler {
++ (id)cellWithID:(NSString *)reuseIdentifier target:(id)target buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler {
 	YXCustomizableCell * cell = [[YXCustomizableCell alloc] initWithReuseIdentifier:reuseIdentifier];
-	cell.delegate = delegate;
+	cell.target = target;
 	cell.buildingSelector = buildingSelector;
 	cell.selectionHandler = selectionHandler;
-	cell.deselectAutomatically = YES;
+	cell.deselectsAutomatically = YES;
+	
 	return [cell autorelease];
 }
 
-- (UITableViewCell*)tableViewCellWithReusableCell:(UITableViewCell*)reusableCell {
-	if (_delegate != nil && _buildingSelector != NULL) {
-		return [_delegate performSelector:_buildingSelector withObject:self withObject:reusableCell];
+
+#pragma mark -
+#pragma mark Public interface
+
+
+- (UITableViewCell *)tableViewCellWithReusableCell:(UITableViewCell *)reusableCell {
+	if (self.target != nil && self.buildingSelector != NULL) {
+		return [self.target performSelector:self.buildingSelector withObject:self withObject:reusableCell];
 	}
 	return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (_deselectAutomatically) {
+	if (self.deselectsAutomatically) {
 		[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	}
 	
-	if (_delegate != nil && _selectionHandler != NULL) {
-		[_delegate performSelector:_selectionHandler withObject:nil];
+	if (self.target != nil && self.selectionHandler != NULL) {
+		[self.target performSelector:self.selectionHandler withObject:nil];
 	}
+}
+
+
+#pragma mark -
+#pragma mark Memory management
+
+
+@synthesize deselectsAutomatically = deselectsAutomatically_;
+@synthesize target = target_;
+@synthesize buildingSelector = buildingSelector_;
+@synthesize selectionHandler = selectionHandler_;
+
+
+- (void)dealloc {
+	target_ = nil;
+	
+	[super dealloc];
 }
 
 @end

@@ -10,20 +10,26 @@
 #import "YXAbstractCell.h"
 
 @interface YXCustomizableCell : YXAbstractCell {
-	id _delegate;
-	SEL _buildingSelector;
-	SEL _selectionHandler;
-	BOOL _deselectAutomatically;
+@private
+	id target_;
+	SEL buildingSelector_;
+	SEL selectionHandler_;
+	BOOL deselectsAutomatically_;
 }
-@property (nonatomic, assign) id delegate;
-@property (nonatomic, assign) SEL buildingSelector;
-@property (nonatomic, assign) SEL selectionHandler;
-@property (nonatomic, assign) BOOL deselectAutomatically;
 
-/*
- Building selector is like - (UITableViewCell*)createTableCellForCell:(YXCell*)cell withReusable:(UITableViewCell*)reusable;
- */
-+ (id)cellWithId:(NSString*)reuseIdentifier delegate:(id)delegate 
-buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler;
+@property (nonatomic, assign, readonly) id target;
+@property (nonatomic, assign, readonly) SEL buildingSelector;
+@property (nonatomic, assign, readonly) SEL selectionHandler;
+@property (nonatomic, assign, readonly) BOOL deselectsAutomatically;
+
+//
+// Target must implement following building selector. Target is responsible
+// for checking 'reusable' argument and creating UITableViewCell if it is nil
+//
+//   - (UITableViewCell *)createTableCellForCell:(YXCustomizableCell *)cell withReusable:(UITableViewCell *)reusable;
+//
+// Selection selector signature:
+// 
++ (id)cellWithID:(NSString *)reuseIdentifier target:(id)target buildingSelector:(SEL)buildingSelector selectionHandler:(SEL)selectionHandler;
 
 @end
