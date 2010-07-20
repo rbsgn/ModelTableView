@@ -11,6 +11,7 @@
 #import "YXSwitchCell.h"
 #import "YXDisclosureCell.h"
 #import "YXButtonCell.h"
+#import "YXSegmentedControlCell.h"
 
 @implementation YXModelTableViewsViewController
 
@@ -35,37 +36,51 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+
+	YXSection * sectionA0 = [[YXSection alloc] initWithHeader:nil footer:nil];
+	[sectionA0 addCell:[YXSegmentedControlCell cellWithReuseIdentifier:@"selectedSegmentControlCell"
+												segmentedControlItems:[NSArray arrayWithObjects:@"Cell 1", @"Cell 2", @"Cell 3", nil]
+															   target:self
+															   action:@selector(segmentedControlCell:didChangeValue:)
+												   initialValueGetter:@selector(segmentedControlSelectedIndex:)]];
+
+
 	YXSection * sectionA = [[YXSection alloc] initWithHeader:@"Section A" footer:nil];
-	
-	[sectionA addCell:[YXSwitchCell cellWithReuseIdentifier:@"cell0" 
-													  title:@"BOOM!" 
-													 target:self 
-										 initialValueGetter:@selector(cell0InitialValue:) 
+
+
+	[sectionA addCell:[YXSwitchCell cellWithReuseIdentifier:@"cell0"
+													  title:@"BOOM!"
+													 target:self
+										 initialValueGetter:@selector(cell0InitialValue:)
 													 action:@selector(cell0:changedValue:)]];
-	
-	[sectionA addCell:[YXDisclosureCell cellWithReuseIdentifier:@"cell1" 
-														  title:@"Advanced" 
+
+	[sectionA addCell:[YXDisclosureCell cellWithReuseIdentifier:@"cell1"
+														  title:@"Advanced"
 														  value:nil
-														 target:self 
+														 target:self
 														 action:@selector(cell1Tapped:)]];
-	
-	
+
+
 	YXSection * sectionB = [[YXSection alloc] initWithHeader:nil footer:@"Section B"];
-	[sectionB addCell:[YXSwitchCell cellWithReuseIdentifier:@"cell2" 
-													  title:@"BAH!1" 
-													 target:self 
-										 initialValueGetter:@selector(cell2InitialValue:) 
+	[sectionB addCell:[YXSwitchCell cellWithReuseIdentifier:@"cell2"
+													  title:@"BAH!1"
+													 target:self
+										 initialValueGetter:@selector(cell2InitialValue:)
 													 action:@selector(cell2:changedValue:)]];
-	
+
 	YXSection * sectionC = [[YXSection alloc] initWithHeader:@"Section C before" footer:@"Section C after"];
-	[sectionC addCell:[YXButtonCell cellWithReuseIdentifier:@"buttonCell" 
+	[sectionC addCell:[YXButtonCell cellWithReuseIdentifier:@"buttonCell"
 													  title:@"Button"
-													 target:self 
+													 target:self
 													 action:@selector(buttonCellTapped:)]];
-	
-	[self setSections:[NSArray arrayWithObjects:sectionA, sectionB, sectionC, nil]];
-	
+
+	[self setSections:[NSArray arrayWithObjects:sectionA0, sectionA, sectionB, sectionC, nil]];
+
+	[sectionA0 release];
+	[sectionA release];
+	[sectionB release];
+	[sectionC release];
+
 	[self.tableView reloadData];
 }
 
@@ -93,6 +108,14 @@
 	NSLog(@"button cell tapped");
 }
 
+- (void)segmentedControlCell:(YXSegmentedControlCell *)cell didChangeValue:(UISegmentedControl *)segmentedControl {
+	NSLog(@"Segemented control did change value to %d", segmentedControl.selectedSegmentIndex);
+}
+
+- (NSInteger)segmentedControlSelectedIndex:(YXSegmentedControlCell *)cell {
+	return 2;
+}
+
 /*
  // Override to allow orientations other than the default portrait orientation.
  - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -104,7 +127,7 @@
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
+
 	// Release any cached data, images, etc that aren't in use.
 }
 
