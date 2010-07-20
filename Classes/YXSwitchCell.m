@@ -25,18 +25,18 @@
 #pragma mark Object lifecycle
 
 
-+ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title 
-					   target:(id)target initialValueGetter:(SEL)initialValueGetter 
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title
+					   target:(id)target initialValueGetter:(SEL)initialValueGetter
 					   action:(SEL)action
 {
 	YXSwitchCell * cell = [[YXSwitchCell alloc] initWithReuseIdentifier:reuseIdentifier];
-	
+
 	cell.target = target;
 	cell.title = title;
 	cell.initialValueGetter = initialValueGetter;
 	cell.action = action;
-	
-	return cell;
+
+	return [cell autorelease];
 }
 
 
@@ -47,7 +47,7 @@
 - (UITableViewCell *)tableViewCellWithReusableCell:(UITableViewCell *)reusableCell {
 	UITableViewCell * cell = reusableCell;
 	UISwitch *switchControl = nil;
-	
+
 	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:self.reuseIdentifier] autorelease];
 		switchControl = [[UISwitch alloc] initWithFrame:CGRectZero];
@@ -56,19 +56,19 @@
 	} else {
 		switchControl = (UISwitch *)[cell accessoryView];
 	}
-	
+
 	[switchControl removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
 
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	cell.textLabel.text = self.title;
-	
-	if (self.target != nil && self.initialValueGetter != NULL) { 
+
+	if (self.target != nil && self.initialValueGetter != NULL) {
 		switchControl.on = [[self.target performSelector:self.initialValueGetter withObject:self] boolValue];
 	}
-	
-	[switchControl addTarget:self action:@selector(switchControlChanged:) 
+
+	[switchControl addTarget:self action:@selector(switchControlChanged:)
 			forControlEvents:UIControlEventValueChanged];
-	
+
 	return cell;
 }
 
@@ -98,7 +98,7 @@
 	target_ = nil;
 	action_ = NULL;
 	initialValueGetter_ = NULL;
-	
+
 	[super dealloc];
 }
 

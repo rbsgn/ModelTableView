@@ -24,16 +24,16 @@
 #pragma mark Object lifecycle
 
 
-+ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title 
++ (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title
 					   target:(id)target action:(SEL)action
 {
 	YXButtonCell * cell = [[YXButtonCell alloc] initWithReuseIdentifier:reuseIdentifier];
-	
+
 	cell.target = target;
 	cell.action = action;
 	cell.title = title;
-	
-	return cell;
+
+	return [cell autorelease];
 }
 
 
@@ -57,7 +57,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	
+
 	if (self.target != nil && self.action != NULL) {
 		[self.target performSelector:self.action withObject:self];
 	}
@@ -77,7 +77,7 @@
 	target_ = nil;
 	action_ = NULL;
 	[title_ release];
-	
+
 	[super dealloc];
 }
 

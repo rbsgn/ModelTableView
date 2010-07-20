@@ -36,13 +36,13 @@
 + (id)cellWithReuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title value:(NSString *)value target:(id)target action:(SEL)action
 {
 	YXDisclosureCell * cell = [[YXDisclosureCell alloc] initWithReuseIdentifier:reuseIdentifier];
-	
+
 	cell.title = title;
 	cell.value = value;
 	cell.target = target;
 	cell.action = action;
-	
-	return cell;
+
+	return [cell autorelease];
 }
 
 
@@ -53,27 +53,27 @@
 - (UITableViewCell *)tableViewCellWithReusableCell:(UITableViewCell *)reusableCell {
 	UITableViewCellStyle style = UITableViewCellStyleDefault;
 	if (self.value != nil) {
-		style = UITableViewCellStyleValue1;	
+		style = UITableViewCellStyleValue1;
 	}
-	
+
 	UITableViewCell * cell = reusableCell;
-	if (cell == nil) {		 
+	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithStyle:style reuseIdentifier:self.reuseIdentifier] autorelease];
 	}
-	
+
 	cell.textLabel.text = self.title;
 	cell.detailTextLabel.text = self.value;
-	
+
 	if (self.target != nil && self.action != NULL) {
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
-	
+
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	
+
 	if (self.target != nil && self.action != NULL) {
 		[self.target performSelector:self.action withObject:self];
 	}
@@ -96,7 +96,7 @@
 
 	[title_ release];
 	[value_ release];
-	
+
 	[super dealloc];
 }
 
