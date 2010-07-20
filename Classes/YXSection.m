@@ -15,6 +15,9 @@
 #pragma mark -
 #pragma mark Objec lifecycle
 
+- (id)init {
+	return [self initWithHeader:nil footer:nil];
+}
 
 - (id)initWithHeader:(NSString *)header footer:(NSString *)footer {
 	self = [super init];
@@ -24,6 +27,10 @@
 		footer_ = [footer copy];
 	}
 	return self;
+}
+
++ (id)section {
+	return [[self class] sectionWithHeader:nil footer:nil];
 }
 
 + (id)sectionWithHeader:(NSString *)header footer:(NSString *)footer {
@@ -60,7 +67,7 @@
 	[cells_ release];
 	[header_ release];
 	[footer_ release];
-	
+
 	[super dealloc];
 }
 

@@ -21,7 +21,10 @@
 @property (nonatomic, readonly) NSString * footer;
 @property (nonatomic, readonly) NSArray * cells;
 
+- (id)init;
 - (id)initWithHeader:(NSString *)header footer:(NSString *)footer;
+
++ (id)section;
 + (id)sectionWithHeader:(NSString *)header footer:(NSString *)footer;
 
 - (void)addCell:(YXAbstractCell *)cell;
