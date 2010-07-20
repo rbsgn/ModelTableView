@@ -23,6 +23,8 @@
 		5CC827B411998C7000EE72E3 /* YXDisclosureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827B311998C7000EE72E3 /* YXDisclosureCell.m */; };
 		5CC8286911999B8700EE72E3 /* YXKVOSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8286811999B8700EE72E3 /* YXKVOSwitchCell.m */; };
 		5CC8289111999EA600EE72E3 /* YXModelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8289011999EA600EE72E3 /* YXModelTableViewController.m */; };
+		C9BC424F11F589F100F1AEA8 /* YXSegmentedControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BC424E11F589F100F1AEA8 /* YXSegmentedControlCell.m */; };
+		C9BC425611F58C7900F1AEA8 /* YXSegmentedControlViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BC425511F58C7900F1AEA8 /* YXSegmentedControlViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,10 @@
 		5CC8288F11999EA600EE72E3 /* YXModelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXModelTableViewController.h; sourceTree = "<group>"; };
 		5CC8289011999EA600EE72E3 /* YXModelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXModelTableViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* YXModelTableViews-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "YXModelTableViews-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C9BC424D11F589F100F1AEA8 /* YXSegmentedControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXSegmentedControlCell.h; sourceTree = "<group>"; };
+		C9BC424E11F589F100F1AEA8 /* YXSegmentedControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXSegmentedControlCell.m; sourceTree = "<group>"; };
+		C9BC425411F58C7900F1AEA8 /* YXSegmentedControlViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXSegmentedControlViewCell.h; sourceTree = "<group>"; };
+		C9BC425511F58C7900F1AEA8 /* YXSegmentedControlViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXSegmentedControlViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,10 @@
 				5CC827AD11998C4400EE72E3 /* YXSwitchCell.m */,
 				5CC8286711999B8700EE72E3 /* YXKVOSwitchCell.h */,
 				5CC8286811999B8700EE72E3 /* YXKVOSwitchCell.m */,
+				C9BC424D11F589F100F1AEA8 /* YXSegmentedControlCell.h */,
+				C9BC424E11F589F100F1AEA8 /* YXSegmentedControlCell.m */,
+				C9BC425411F58C7900F1AEA8 /* YXSegmentedControlViewCell.h */,
+				C9BC425511F58C7900F1AEA8 /* YXSegmentedControlViewCell.m */,
 			);
 			name = "Model Table View";
 			sourceTree = "<group>";
@@ -220,6 +230,8 @@
 				5CC827B411998C7000EE72E3 /* YXDisclosureCell.m in Sources */,
 				5CC8286911999B8700EE72E3 /* YXKVOSwitchCell.m in Sources */,
 				5CC8289111999EA600EE72E3 /* YXModelTableViewController.m in Sources */,
+				C9BC424F11F589F100F1AEA8 /* YXSegmentedControlCell.m in Sources */,
+				C9BC425611F58C7900F1AEA8 /* YXSegmentedControlViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
