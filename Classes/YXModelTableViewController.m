@@ -26,7 +26,11 @@
     return self;
 }
 
+- (void)viewDidLoad {
+	[self viewDidLoad];
 
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+}
 
 #pragma mark -
 #pragma mark Table view data source
@@ -68,7 +72,7 @@
 	if (reusableCell != nil && newCell != reusableCell) {
 		NSLog(@"WARNING: reusable cell for id %@ was ignored", cell.reuseIdentifier);
 	}
-	
+
 	return newCell;
 }
 
@@ -93,7 +97,7 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
+
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
