@@ -14,5 +14,5 @@
 #import "YXButtonCell.h"
 #import "YXDisclosureCell.h"
 #import "YXSwitchCell.h"
-#import "YXKVOSwitchCell.h"
+#import "YXKVCSwitchCell.h"
 #import "YXSegmentedControlCell.h"

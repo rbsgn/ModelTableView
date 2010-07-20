@@ -6,9 +6,9 @@
 //  Copyright 2010 Yandex. All rights reserved.
 //
 
-#import "YXKVOSwitchCell.h"
+#import "YXKVCSwitchCell.h"
 
-@interface YXKVOSwitchCell ()
+@interface YXKVCSwitchCell ()
 
 @property (nonatomic, copy, readwrite) NSString * title;
 @property (nonatomic, assign, readwrite) id target;
@@ -21,33 +21,33 @@
 @end
 
 
-@implementation YXKVOSwitchCell
+@implementation YXKVCSwitchCell
 
 
 #pragma mark -
 #pragma mark Object lifecycle
 
 
-+ (id)cellWithReuseIdentifier:(NSString*)reuseIdentifier title:(NSString *)title 
++ (id)cellWithReuseIdentifier:(NSString*)reuseIdentifier title:(NSString *)title
 				   object:(id)object key:(NSString *)key {
-	YXKVOSwitchCell * cell = [[YXKVOSwitchCell alloc] initWithReuseIdentifier:reuseIdentifier];
-	
+	YXKVCSwitchCell * cell = [[YXKVCSwitchCell alloc] initWithReuseIdentifier:reuseIdentifier];
+
 	cell.title = title;
 	cell.target = cell;
 	cell.initialValueGetter = @selector(initialValue:);
 	cell.action = @selector(cell:changedValue:);
-	
+
 	cell.object = object;
 	cell.key = key;
-	
+
 	return cell;
 }
 
-- (NSNumber *)initialValue:(YXKVOSwitchCell *)cell {
+- (NSNumber *)initialValue:(YXKVCSwitchCell *)cell {
 	return [self.object valueForKey:self.key];
 }
 
-- (void)cell:(YXKVOSwitchCell *)cell changedValue:(UISwitch *)switchControl {
+- (void)cell:(YXKVCSwitchCell *)cell changedValue:(UISwitch *)switchControl {
 	[self.object setValue:[switchControl valueForKey:@"on"] forKey:self.key];
 }
 
@@ -85,7 +85,7 @@
 - (void)dealloc {
 	[object_ release];
 	[key_ release];
-	
+
 	[super dealloc];
 }
 

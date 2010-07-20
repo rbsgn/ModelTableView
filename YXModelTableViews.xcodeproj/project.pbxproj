@@ -21,7 +21,7 @@
 		5CC827AE11998C4400EE72E3 /* YXSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827AD11998C4400EE72E3 /* YXSwitchCell.m */; };
 		5CC827B111998C4F00EE72E3 /* YXButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827B011998C4F00EE72E3 /* YXButtonCell.m */; };
 		5CC827B411998C7000EE72E3 /* YXDisclosureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827B311998C7000EE72E3 /* YXDisclosureCell.m */; };
-		5CC8286911999B8700EE72E3 /* YXKVOSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8286811999B8700EE72E3 /* YXKVOSwitchCell.m */; };
+		5CC8286911999B8700EE72E3 /* YXKVCSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8286811999B8700EE72E3 /* YXKVCSwitchCell.m */; };
 		5CC8289111999EA600EE72E3 /* YXModelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8289011999EA600EE72E3 /* YXModelTableViewController.m */; };
 		C9BC424F11F589F100F1AEA8 /* YXSegmentedControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BC424E11F589F100F1AEA8 /* YXSegmentedControlCell.m */; };
 		C9BC425611F58C7900F1AEA8 /* YXSegmentedControlViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BC425511F58C7900F1AEA8 /* YXSegmentedControlViewCell.m */; };
@@ -52,8 +52,8 @@
 		5CC827B011998C4F00EE72E3 /* YXButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXButtonCell.m; sourceTree = "<group>"; };
 		5CC827B211998C7000EE72E3 /* YXDisclosureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXDisclosureCell.h; sourceTree = "<group>"; };
 		5CC827B311998C7000EE72E3 /* YXDisclosureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXDisclosureCell.m; sourceTree = "<group>"; };
-		5CC8286711999B8700EE72E3 /* YXKVOSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXKVOSwitchCell.h; sourceTree = "<group>"; };
-		5CC8286811999B8700EE72E3 /* YXKVOSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXKVOSwitchCell.m; sourceTree = "<group>"; };
+		5CC8286711999B8700EE72E3 /* YXKVCSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXKVCSwitchCell.h; sourceTree = "<group>"; };
+		5CC8286811999B8700EE72E3 /* YXKVCSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXKVCSwitchCell.m; sourceTree = "<group>"; };
 		5CC8288F11999EA600EE72E3 /* YXModelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXModelTableViewController.h; sourceTree = "<group>"; };
 		5CC8289011999EA600EE72E3 /* YXModelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXModelTableViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* YXModelTableViews-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "YXModelTableViews-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -157,8 +157,8 @@
 				5CC827B311998C7000EE72E3 /* YXDisclosureCell.m */,
 				5CC827AC11998C4400EE72E3 /* YXSwitchCell.h */,
 				5CC827AD11998C4400EE72E3 /* YXSwitchCell.m */,
-				5CC8286711999B8700EE72E3 /* YXKVOSwitchCell.h */,
-				5CC8286811999B8700EE72E3 /* YXKVOSwitchCell.m */,
+				5CC8286711999B8700EE72E3 /* YXKVCSwitchCell.h */,
+				5CC8286811999B8700EE72E3 /* YXKVCSwitchCell.m */,
 				C9BC424D11F589F100F1AEA8 /* YXSegmentedControlCell.h */,
 				C9BC424E11F589F100F1AEA8 /* YXSegmentedControlCell.m */,
 				C9BC425411F58C7900F1AEA8 /* YXSegmentedControlViewCell.h */,
@@ -230,7 +230,7 @@
 				5CC827AE11998C4400EE72E3 /* YXSwitchCell.m in Sources */,
 				5CC827B111998C4F00EE72E3 /* YXButtonCell.m in Sources */,
 				5CC827B411998C7000EE72E3 /* YXDisclosureCell.m in Sources */,
-				5CC8286911999B8700EE72E3 /* YXKVOSwitchCell.m in Sources */,
+				5CC8286911999B8700EE72E3 /* YXKVCSwitchCell.m in Sources */,
 				5CC8289111999EA600EE72E3 /* YXModelTableViewController.m in Sources */,
 				C9BC424F11F589F100F1AEA8 /* YXSegmentedControlCell.m in Sources */,
 				C9BC425611F58C7900F1AEA8 /* YXSegmentedControlViewCell.m in Sources */,
