@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YXModelTableViewController.h"
+#import "YXModelTableView.h"
 
 @interface YXModelTableViewsViewController : YXModelTableViewController {
 }

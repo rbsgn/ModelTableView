@@ -8,11 +8,6 @@
 
 #import "YXModelTableViewsViewController.h"
 
-#import "YXSwitchCell.h"
-#import "YXDisclosureCell.h"
-#import "YXButtonCell.h"
-#import "YXSegmentedControlCell.h"
-
 @implementation YXModelTableViewsViewController
 
 

@@ -61,6 +61,7 @@
 		C9BC424E11F589F100F1AEA8 /* YXSegmentedControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXSegmentedControlCell.m; sourceTree = "<group>"; };
 		C9BC425411F58C7900F1AEA8 /* YXSegmentedControlViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXSegmentedControlViewCell.h; sourceTree = "<group>"; };
 		C9BC425511F58C7900F1AEA8 /* YXSegmentedControlViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXSegmentedControlViewCell.m; sourceTree = "<group>"; };
+		C9BC432511F5DBBB00F1AEA8 /* YXModelTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXModelTableView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +142,7 @@
 		5CC828AC1199A0A200EE72E3 /* Model Table View */ = {
 			isa = PBXGroup;
 			children = (
+				C9BC432511F5DBBB00F1AEA8 /* YXModelTableView.h */,
 				5CC8288F11999EA600EE72E3 /* YXModelTableViewController.h */,
 				5CC8289011999EA600EE72E3 /* YXModelTableViewController.m */,
 				5CC827A0119979AD00EE72E3 /* YXSection.h */,
