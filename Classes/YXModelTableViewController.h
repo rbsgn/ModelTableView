@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YXCustomizableCell.h"
-#import "YXSection.h"
 
 @interface YXModelTableViewController : UITableViewController {
-	NSArray * _sections;
+	NSArray * sections_;
 }
-@property (nonatomic, retain) NSArray *sections;
+
+@property (nonatomic, copy) NSArray * sections;
 
 @end

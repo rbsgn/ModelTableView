@@ -8,10 +8,7 @@
 
 #import "YXModelTableViewController.h"
 
-
 @implementation YXModelTableViewController
-
-@synthesize sections = _sections;
 
 
 #pragma mark -
@@ -19,9 +16,9 @@
 
 
 - (id)initWithStyle:(UITableViewStyle)style {
-    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-    if ((self = [super initWithStyle:style])) {
-		_sections = [[NSArray alloc] init];
+    self = [super initWithStyle:UITableViewStyleGrouped];
+    if (self) {
+		sections_ = [[NSArray alloc] init];
     }
     return self;
 }
@@ -35,32 +32,29 @@
 #pragma mark -
 #pragma mark Table view data source
 
-- (void)setSections:(NSArray*)sections {
-	_sections = [sections retain];
-}
 
 - (YXAbstractCell *)modelCellAtIndexPath:(NSIndexPath *)indexPath {
-	YXSection * section = [_sections objectAtIndex:indexPath.section];
+	YXSection * section = [self.sections objectAtIndex:indexPath.section];
 	YXAbstractCell * cell = [section.cells objectAtIndex:indexPath.row];
 	return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return [_sections count];
+	return [self.sections count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionNum {
-	YXSection * section = [_sections objectAtIndex:sectionNum];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex {
+	YXSection * section = [self.sections objectAtIndex:sectionIndex];
 	return [section.cells count];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)sectionNum {
-	YXSection * section = [_sections objectAtIndex:sectionNum];
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)sectionIndex {
+	YXSection * section = [self.sections objectAtIndex:sectionNum];
 	return section.footer;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionNum {
-	YXSection * section = [_sections objectAtIndex:sectionNum];
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionIndex {
+	YXSection * section = [self.sections objectAtIndex:sectionNum];
 	return section.header;
 }
 
@@ -75,6 +69,11 @@
 
 	return newCell;
 }
+
+
+#pragma mark -
+#pragma mark Table view delegate 
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	YXAbstractCell * cell = [self modelCellAtIndexPath:indexPath];
@@ -91,24 +90,25 @@
 	[cell tableView:tableView accessoryButtonTappedForRowWithIndexPath:indexPath];
 }
 
+
 #pragma mark -
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
 
-    // Relinquish ownership any cached data, images, etc that aren't in use.
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 - (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+    [super viewDidUnload];
 }
 
 
+@synthesize sections = sections_;
+
+
 - (void)dealloc {
-	self.sections = nil;
+	[sections_ release];
 
     [super dealloc];
 }
