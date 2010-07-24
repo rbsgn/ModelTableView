@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class YXAbstractCell;
 
@@ -14,11 +15,19 @@
 @private
 	NSString * header_;
 	NSString * footer_;
+
+	UIView * headerView_;
+	UIView * footerView_;
+
 	NSMutableArray * cells_;
 }
 
 @property (nonatomic, readonly) NSString * header;
 @property (nonatomic, readonly) NSString * footer;
+
+@property (nonatomic, retain) UIView *footerView;
+@property (nonatomic, retain) UIView *headerView;
+
 @property (nonatomic, readonly) NSArray * cells;
 
 - (id)init;

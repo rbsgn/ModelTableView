@@ -61,12 +61,18 @@
 
 @synthesize header = header_;
 @synthesize footer = footer_;
+@synthesize headerView = headerView_;
+@synthesize footerView = footerView_;
 
 
 - (void)dealloc {
-	[cells_ release];
 	[header_ release];
 	[footer_ release];
+
+	[headerView_ release];
+	[footerView_ release];
+
+	[cells_ release];
 
 	[super dealloc];
 }

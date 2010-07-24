@@ -58,6 +58,32 @@
 	return section.header;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)sectionIndex {
+	YXSection * section = [self.sections objectAtIndex:sectionIndex];
+	return section.headerView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)sectionIndex {
+	YXSection * section = [self.sections objectAtIndex:sectionIndex];
+	return section.footerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)sectionIndex {
+	YXSection * section = [self.sections objectAtIndex:sectionIndex];
+	if (section.footer == nil && section.footerView != nil) {
+		return CGRectGetHeight(section.footerView.frame);
+	}
+	return -1.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex {
+	YXSection * section = [self.sections objectAtIndex:sectionIndex];
+	if (section.header == nil && section.headerView != nil) {
+		return CGRectGetHeight(section.headerView.frame);
+	}
+	return -1.0f;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	YXAbstractCell * cell = [self modelCellAtIndexPath:indexPath];
 	UITableViewCell * reusableCell = [tableView dequeueReusableCellWithIdentifier:cell.reuseIdentifier];

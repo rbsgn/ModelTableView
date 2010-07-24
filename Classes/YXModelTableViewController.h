@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface YXModelTableViewController : UITableViewController {
+@private
 	NSArray * sections_;
 }
 
