@@ -49,10 +49,12 @@
 
 @synthesize reuseIdentifier = reuseIdentifier_;
 @synthesize userInfo = userInfo_;
+@synthesize image = image_;
 
 - (void)dealloc {
 	[reuseIdentifier_ release];
 	[userInfo_ release];
+	[image_ release];
 	
 	[super dealloc];
 }

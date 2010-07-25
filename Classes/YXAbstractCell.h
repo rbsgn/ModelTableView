@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 @interface YXAbstractCell : NSObject {
 @protected
 	NSString * reuseIdentifier_;
 	id userInfo_;
+	UIImage * image_;
 }
 
 @property (nonatomic, readonly) NSString * reuseIdentifier;
 @property (nonatomic, retain) id userInfo;
+@property (nonatomic, retain) UIImage * image;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 
