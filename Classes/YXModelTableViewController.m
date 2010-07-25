@@ -49,12 +49,12 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)sectionIndex {
-	YXSection * section = [self.sections objectAtIndex:sectionNum];
+	YXSection * section = [self.sections objectAtIndex:sectionIndex];
 	return section.footer;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)sectionIndex {
-	YXSection * section = [self.sections objectAtIndex:sectionNum];
+	YXSection * section = [self.sections objectAtIndex:sectionIndex];
 	return section.header;
 }
 

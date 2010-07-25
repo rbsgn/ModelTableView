@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YXModelTableView.h"
 
 @interface YXModelTableViewController : UITableViewController {
 @private
