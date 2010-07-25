@@ -16,3 +16,5 @@
 #import "YXSwitchCell.h"
 #import "YXKVCSwitchCell.h"
 #import "YXSegmentedControlCell.h"
+#import "YXCheckmarkCell.h"
+#import "YXCheckmarkCellGroup.h"

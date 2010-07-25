@@ -22,6 +22,8 @@
 		5CC827B411998C7000EE72E3 /* YXDisclosureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC827B311998C7000EE72E3 /* YXDisclosureCell.m */; };
 		5CC8286911999B8700EE72E3 /* YXKVCSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8286811999B8700EE72E3 /* YXKVCSwitchCell.m */; };
 		5CC8289111999EA600EE72E3 /* YXModelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8289011999EA600EE72E3 /* YXModelTableViewController.m */; };
+		C9B1596C11FC7419007FAE69 /* YXCheckmarkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B1596B11FC7419007FAE69 /* YXCheckmarkCell.m */; };
+		C9B1597D11FC7905007FAE69 /* YXCheckmarkCellGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B1597C11FC7905007FAE69 /* YXCheckmarkCellGroup.m */; };
 		C9BC424F11F589F100F1AEA8 /* YXSegmentedControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BC424E11F589F100F1AEA8 /* YXSegmentedControlCell.m */; };
 		C9BC425611F58C7900F1AEA8 /* YXSegmentedControlViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BC425511F58C7900F1AEA8 /* YXSegmentedControlViewCell.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,10 @@
 		5CC8288F11999EA600EE72E3 /* YXModelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXModelTableViewController.h; sourceTree = "<group>"; };
 		5CC8289011999EA600EE72E3 /* YXModelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXModelTableViewController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* YXModelTableViews-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "YXModelTableViews-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C9B1596A11FC7419007FAE69 /* YXCheckmarkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCheckmarkCell.h; sourceTree = "<group>"; };
+		C9B1596B11FC7419007FAE69 /* YXCheckmarkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCheckmarkCell.m; sourceTree = "<group>"; };
+		C9B1597B11FC7905007FAE69 /* YXCheckmarkCellGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXCheckmarkCellGroup.h; sourceTree = "<group>"; };
+		C9B1597C11FC7905007FAE69 /* YXCheckmarkCellGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXCheckmarkCellGroup.m; sourceTree = "<group>"; };
 		C9BC424D11F589F100F1AEA8 /* YXSegmentedControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXSegmentedControlCell.h; sourceTree = "<group>"; };
 		C9BC424E11F589F100F1AEA8 /* YXSegmentedControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXSegmentedControlCell.m; sourceTree = "<group>"; };
 		C9BC425411F58C7900F1AEA8 /* YXSegmentedControlViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXSegmentedControlViewCell.h; sourceTree = "<group>"; };
@@ -160,6 +166,10 @@
 				C9BC424E11F589F100F1AEA8 /* YXSegmentedControlCell.m */,
 				C9BC425411F58C7900F1AEA8 /* YXSegmentedControlViewCell.h */,
 				C9BC425511F58C7900F1AEA8 /* YXSegmentedControlViewCell.m */,
+				C9B1596A11FC7419007FAE69 /* YXCheckmarkCell.h */,
+				C9B1596B11FC7419007FAE69 /* YXCheckmarkCell.m */,
+				C9B1597B11FC7905007FAE69 /* YXCheckmarkCellGroup.h */,
+				C9B1597C11FC7905007FAE69 /* YXCheckmarkCellGroup.m */,
 			);
 			name = "Model Table View";
 			sourceTree = "<group>";
@@ -230,6 +240,8 @@
 				5CC8289111999EA600EE72E3 /* YXModelTableViewController.m in Sources */,
 				C9BC424F11F589F100F1AEA8 /* YXSegmentedControlCell.m in Sources */,
 				C9BC425611F58C7900F1AEA8 /* YXSegmentedControlViewCell.m in Sources */,
+				C9B1596C11FC7419007FAE69 /* YXCheckmarkCell.m in Sources */,
+				C9B1597D11FC7905007FAE69 /* YXCheckmarkCellGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 //
 //  YXSegmentedControlCell.h
-//  SegmentedControlCell
+//  YXModelTableViews
 //
 //  Created by Roman Busyghin on 6/23/10.
 //  Copyright 2010 Яндекс. All rights reserved.
