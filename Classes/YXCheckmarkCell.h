@@ -11,7 +11,7 @@
 @class YXCheckmarkCellGroup;
 
 @interface YXCheckmarkCell : YXAbstractCell {
-@private
+@protected
 	NSString * title_;
 	
 	id target_;

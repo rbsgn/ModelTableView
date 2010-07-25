@@ -17,4 +17,8 @@
 #import "YXKVCSwitchCell.h"
 #import "YXSegmentedControlCell.h"
 #import "YXCheckmarkCell.h"
+#import "YXKVCCheckmarkCell.h"
 #import "YXCheckmarkCellGroup.h"
+#import "YXEditableCell.h"
+#import "YXKVCValueCell.h"
+#import "YXStaticValueCell.h"
