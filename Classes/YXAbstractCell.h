@@ -12,9 +12,11 @@
 @interface YXAbstractCell : NSObject {
 @protected
 	NSString * reuseIdentifier_;
+	id userInfo_;
 }
 
 @property (nonatomic, readonly) NSString * reuseIdentifier;
+@property (nonatomic, retain) id userInfo;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 
