@@ -12,11 +12,13 @@
 @implementation YXModelTableViewsAppDelegate
 
 @synthesize window;
-@synthesize viewController;
+//@synthesize viewController;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    // Override point for customization after app launch    
+    // Override point for customization after app launch
+    viewController = [[YXModelTableViewsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 	
@@ -27,6 +29,7 @@
 - (void)dealloc {
     [viewController release];
     [window release];
+
     [super dealloc];
 }
 

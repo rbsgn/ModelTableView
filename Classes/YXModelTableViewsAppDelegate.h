@@ -12,11 +12,11 @@
 
 @interface YXModelTableViewsAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    YXModelTableViewsViewController *viewController;
+    YXModelTableViewsViewController * viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet YXModelTableViewsViewController *viewController;
+//@property (nonatomic, retain) IBOutlet YXModelTableViewsViewController *viewController;
 
 @end
 
