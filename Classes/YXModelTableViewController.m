@@ -24,7 +24,7 @@
 }
 
 - (void)viewDidLoad {
-	[self viewDidLoad];
+	[super viewDidLoad];
 
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
